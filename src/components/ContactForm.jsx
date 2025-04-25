@@ -62,27 +62,47 @@ function ContactForm({ pizzas }) {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       setIsSubmitting(true);
 
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
+      try {
+        // This is where you connect to your Express backend
+        const response = await fetch("http://localhost:5000/api/messages", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formValues),
+        });
 
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFormValues({
-            name: "",
-            email: "",
-            message: "",
-          });
-        }, 3000);
-      }, 1000);
+        const data = await response.json();
+
+        if (data.success) {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+
+          // Reset form after 3 seconds
+          setTimeout(() => {
+            setIsSubmitted(false);
+            setFormValues({
+              name: "",
+              email: "",
+              message: "",
+            });
+          }, 3000);
+        } else {
+          setIsSubmitting(false);
+          // Handle error from server
+          alert(data.message || "Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        setIsSubmitting(false);
+        alert("Failed to send message. Please try again later.");
+        console.error("Error:", error);
+      }
     }
   };
   return (
