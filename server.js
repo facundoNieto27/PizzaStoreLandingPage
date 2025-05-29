@@ -6,13 +6,13 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
 // Middleware
 
 app.use(
   cors({
-    origin: ["http://localhost:3001"],
+    origin: ["http://localhost:5000"],
   })
 );
 
@@ -52,12 +52,15 @@ app.use("/api/messages", limiter);
 const helmet = require("helmet");
 app.use(helmet());
 
+// Import routes
+const messageRoutes = require("./contact-form-backend/routes/messages");
+// Use routes
+app.use("/api/messages", messageRoutes);
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("MongoDB connection error:", err));
-// Import routes
-const messageRoutes = require("contact-form-backend/routes/messages");
-// Use routes
-app.use("/api/messages", messageRoutes);
+
+
