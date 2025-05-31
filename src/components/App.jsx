@@ -69,7 +69,8 @@ function App() {
         <section className="hero">
           <h1 className="hero-title">Welcome to PizzaLand</h1>
           <p className="hero-subtitle">Crafting Perfect Pizzas Since 2010</p>
-          <button className="order-button">Order Now</button>
+          <a className="order-button" target="_blank" href="https://wa.me/1234567890?text=Hi!%20I'd%20like%20to%20order%20a%20pizza" 
+   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Order'})">Order Now</a>
         </section>
 
         <section id="menu" className="menu-section">
