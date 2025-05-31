@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0cb3575a.css",
-    "main.js": "/static/js/main.6765eeb1.js",
+    "main.css": "/static/css/main.8590b142.css",
+    "main.js": "/static/js/main.20e8b136.js",
     "static/media/meat-lovers.jpg": "/static/media/meat-lovers.6281f1570110f665415d.jpg",
     "static/media/margherita.jpeg": "/static/media/margherita.199b4e982bc89fc3d128.jpeg",
     "static/media/veggie.jpg": "/static/media/veggie.d2d300aa4300716aa607.jpg",
@@ -10,11 +10,11 @@
     "static/media/pepperoni-caroussell.jpeg": "/static/media/pepperoni-caroussell.d173e5db8dacdf1324ed.jpeg",
     "static/media/chicken.avif": "/static/media/chicken.c983964a01757eda98de.avif",
     "index.html": "/index.html",
-    "main.0cb3575a.css.map": "/static/css/main.0cb3575a.css.map",
-    "main.6765eeb1.js.map": "/static/js/main.6765eeb1.js.map"
+    "main.8590b142.css.map": "/static/css/main.8590b142.css.map",
+    "main.20e8b136.js.map": "/static/js/main.20e8b136.js.map"
   },
   "entrypoints": [
-    "static/css/main.0cb3575a.css",
-    "static/js/main.6765eeb1.js"
+    "static/css/main.8590b142.css",
+    "static/js/main.20e8b136.js"
   ]
 }
