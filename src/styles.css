@@ -59,6 +59,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 a {
@@ -75,6 +76,7 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Header */
@@ -89,6 +91,7 @@ ul {
   top: 0;
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .logo {
@@ -97,7 +100,7 @@ ul {
 }
 
 .logo-text {
-  font-size: 24px;
+  font-size: clamp(20px, 4vw, 24px);
   font-weight: 700;
   color: var(--accent-color);
   transition: color 0.3s ease;
@@ -106,6 +109,7 @@ ul {
 .nav {
   display: flex;
   gap: 20px;
+  flex-direction: wrap;
 }
 
 .nav-link {
@@ -114,6 +118,7 @@ ul {
   border-radius: 4px;
   transition: all 0.3s ease;
   color: var(--text-primary);
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .nav-link:hover {
@@ -123,7 +128,7 @@ ul {
 
 /* Hero Section */
 .hero {
-  height: 500px;
+  height: clamp(400px, 60vh, 500px);
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../src/images/pizza-pepperoni.jpg") no-repeat center center/cover;
   display: flex;
@@ -133,31 +138,35 @@ ul {
   text-align: center;
   color: #fff;
   padding: 0 20px;
+  width: 100%;
 }
 
 .hero-title {
-  font-size: 48px;
+  font-size: clamp(28px, 6vw, 48px);
   font-weight: 700;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   margin-bottom: 30px;
+  max-width: 90%;
 }
 
 .order-button {
   background-color: var(--accent-color);
   color: #fff;
   border: none;
-  padding: 12px 24px;
-  font-size: 18px;
+  padding: clamp(10px 20px, 2vw, 12px 24px);
+  font-size: clamp(16px, 2.5vw, 18px);
   font-weight: 600;
   border-radius: 30px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(255, 90, 95, 0.3);
+  text-align: center;
 }
 
 .order-button:hover {
@@ -168,12 +177,13 @@ ul {
 
 /* Section Styles */
 section {
-  padding: 80px 20px;
+  padding: clamp(40px, 8vw, 80px) 20px;
+  width: 100%;
 }
 
 .section-title {
   text-align: center;
-  font-size: 36px;
+  font-size: clamp(28px, 5vw, 36px);
   font-weight: 700;
   margin-bottom: 40px;
   color: var(--text-primary);
@@ -187,7 +197,7 @@ section {
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: clamp(40px, 8vw, 60px);
   height: 4px;
   background-color: var(--accent-color);
   border-radius: 2px;
@@ -199,6 +209,7 @@ section {
   position: relative;
   max-width: 800px;
   margin: 0 auto 60px;
+  width: 100%;
 }
 
 .carousel {
@@ -206,7 +217,7 @@ section {
   border-radius: 10px;
   box-shadow: 0 10px 30px var(--shadow-light);
   overflow: hidden;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -215,7 +226,7 @@ section {
 }
 
 .pizza-name {
-  font-size: 28px;
+  font-size: clamp(22px, 4vw, 28px);
   margin-bottom: 20px;
   color: var(--accent-color);
   transition: color 0.3s ease;
@@ -223,7 +234,7 @@ section {
 
 .pizza-image {
   width: 100%;
-  height: 350px;
+  height: clamp(250px, 40vw, 350px);
   object-fit: cover;
   background-size: cover;
   background-position: center;
@@ -232,24 +243,25 @@ section {
 }
 
 .pizza-desc {
-  font-size: 16px;
+  font-size: clamp(14px, 2.5vw, 16px);
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  line-height: 1.5;
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 5vw, 40px);
+  height: clamp(35px, 5vw, 40px);
   background-color: var(--bg-secondary);
   border: none;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
   color: var(--text-primary);
   box-shadow: 0 2px 10px var(--shadow-light);
   cursor: pointer;
@@ -263,22 +275,24 @@ section {
 }
 
 .prev {
-  left: -20px;
+  left: clamp(-25px, -3vw, -20px);
 }
 
 .next {
-  right: -20px;
+  right: clamp(-25px, -3vw, -20px);
 }
 
 .carousel-dots {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: clamp(10px, 1.5vw, 12px);
+  height: clamp(10px, 1.5vw, 12px);
   background-color: var(--border-color);
   border-radius: 50%;
   margin: 0 5px;
@@ -294,16 +308,17 @@ section {
 /* Menu Grid */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(20px, 4vw, 30px);
   margin-top: 40px;
+  width: 100%;
 }
 
 .menu-item {
   background-color: var(--bg-secondary);
   border-radius: 10px;
   box-shadow: 0 5px 15px var(--shadow-light);
-  padding: 20px;
+  padding: clamp(15px, 3vw, 20px);
   transition: all 0.3s ease;
 }
 
@@ -316,6 +331,12 @@ section {
   color: var(--accent-color);
   margin-bottom: 10px;
   transition: color 0.3s ease;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+.menu-item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 1.5;
 }
 
 /* Hours Section */
@@ -327,14 +348,18 @@ section {
 .hours-container {
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hours-item {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0;
+  align-items: center;
+  padding: clamp(12px, 2vw, 15px) 0;
   border-bottom: 1px solid var(--border-light);
   transition: border-color 0.3s ease;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .hours-item:last-child {
@@ -345,19 +370,22 @@ section {
   font-weight: 600;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .time {
   color: var(--accent-color);
   font-weight: 500;
   transition: color 0.3s ease;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 /* Contact Section */
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(30px, 6vw, 60px);
+  width: 100%;
 }
 
 .contact-info {
@@ -370,19 +398,22 @@ section {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 18px;
+  font-size: clamp(16px, 2.5vw, 18px);
   color: var(--text-primary);
   transition: color 0.3s ease;
+  flex-wrap: wrap;
+  flex-direction: inherit;
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 5vw, 40px);
+  height: clamp(35px, 5vw, 40px);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   filter: brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(95%) contrast(95%);
   transition: filter 0.3s ease;
+  flex-shrink: 0;
 }
 
 .dark .icon {
@@ -423,6 +454,7 @@ section {
   color: var(--text-primary);
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-word;
 }
 
 .location-link:hover {
@@ -431,18 +463,19 @@ section {
 
 .form-input,
 .form-textarea {
-  padding: 12px;
+  padding: clamp(10px, 2vw, 12px);
   border: 1px solid var(--border-color);
   border-radius: 5px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
   background-color: var(--input-bg);
   color: var(--text-primary);
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .form-textarea {
-  height: 150px;
+  height: clamp(120px, 20vw, 150px);
   resize: none;
 }
 
@@ -450,11 +483,12 @@ section {
   background-color: var(--accent-color);
   color: #fff;
   border: none;
-  padding: 12px;
+  padding: clamp(10px, 2vw, 12px);
   border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .form-button:hover {
@@ -463,7 +497,7 @@ section {
 
 .error-message {
   color: var(--error-color);
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vw, 14px);
   margin-top: 5px;
   display: flex;
   align-items: center;
@@ -477,6 +511,7 @@ section {
   background-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/icons/exclamation-circle-fill.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .input-error {
@@ -490,12 +525,12 @@ section {
   justify-content: center;
   height: 100%;
   text-align: center;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
 }
 
 .success-icon {
-  width: 60px;
-  height: 60px;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(50px, 8vw, 60px);
   background-image: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/icons/check-circle-fill.svg");
   background-size: contain;
   background-repeat: no-repeat;
@@ -504,7 +539,7 @@ section {
 
 .success-title {
   color: var(--success-color);
-  font-size: 24px;
+  font-size: clamp(20px, 3vw, 24px);
   font-weight: bold;
   margin-bottom: 10px;
   transition: color 0.3s ease;
@@ -513,6 +548,7 @@ section {
 .success-text {
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .form-button:disabled {
@@ -523,7 +559,7 @@ section {
 .contact-info-box {
   background-color: var(--bg-secondary);
   border-radius: 8px;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -531,13 +567,13 @@ section {
 .contact-form-box {
   background-color: var(--bg-secondary);
   border-radius: 8px;
-  padding: 30px;
+  padding: clamp(20px, 4vw, 30px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-title {
-  font-size: 22px;
+  font-size: clamp(18px, 3vw, 22px);
   font-weight: 600;
   margin-bottom: 25px;
   color: var(--text-primary);
@@ -554,7 +590,7 @@ section {
 }
 
 .business-hours p {
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vw, 14px);
   color: var(--text-secondary);
   transition: color 0.3s ease;
 }
@@ -565,13 +601,14 @@ section {
   display: block;
   color: var(--text-primary);
   transition: color 0.3s ease;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 /* Footer */
 .footer {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
-  padding: 40px 20px;
+  padding: clamp(30px, 5vw, 40px) 20px;
   text-align: center;
   border-top: 1px solid var(--border-color);
   transition: all 0.3s ease;
@@ -580,16 +617,17 @@ section {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(15px, 3vw, 20px);
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: clamp(35px, 5vw, 40px);
+  height: clamp(35px, 5vw, 40px);
   background-color: var(--overlay-bg);
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -602,15 +640,15 @@ section {
 
 .copyright {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: clamp(12px, 1.8vw, 14px);
   transition: color 0.3s ease;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: clamp(15px, 3vw, 20px);
+  right: clamp(15px, 3vw, 20px);
   z-index: 1000;
   background: none;
   border: none;
@@ -625,8 +663,8 @@ section {
 }
 
 .toggle-track {
-  width: 60px;
-  height: 30px;
+  width: clamp(50px, 8vw, 60px);
+  height: clamp(25px, 4vw, 30px);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 15px;
   position: relative;
@@ -639,8 +677,8 @@ section {
 }
 
 .toggle-thumb {
-  width: 26px;
-  height: 26px;
+  width: clamp(21px, 3.5vw, 26px);
+  height: clamp(21px, 3.5vw, 26px);
   background: white;
   border-radius: 50%;
   position: absolute;
@@ -655,7 +693,7 @@ section {
 }
 
 .toggle-thumb.dark {
-  transform: translateX(30px);
+  transform: translateX(clamp(25px, 4vw, 30px));
   background: #1a202c;
   color: #fbbf24;
 }
@@ -665,31 +703,127 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 36px;
+/* Extra Large Screens */
+@media (min-width: 1400px) {
+  .app-container {
+    max-width: 1400px;
   }
+  
+  .hero {
+    height: 600px;
+  }
+  
+  .pizza-image {
+    height: 400px;
+  }
+}
 
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 20px;
+  }
+  
+  .nav {
+    gap: 15px;
+  }
+  
+  .hero {
+    height: 450px;
+  }
+  
+  .section-title {
+    margin-bottom: 30px;
+  }
+  
+  .carousel {
+    padding: 25px;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .nav {
+    gap: 10px;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .nav-link {
+    padding: 8px 15px;
+    text-align: center;
+    flex: 1;
+    max-width: 100px;
+  }
+  
+  .hero {
+    height: 400px;
+    padding: 0 15px;
+  }
+  
+  .section {
+    padding: 50px 15px;
+  }
+  
+  .carousel-container {
+    margin: 0 auto 40px;
+  }
+  
+  .carousel {
+    padding: 20px;
+  }
+  
+  .pizza-image {
+    height: 280px;
+  }
+  
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+  
+  .prev {
+    left: -18px;
+  }
+  
+  .next {
+    right: -18px;
+  }
+  
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
   .contact-container {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
-
-  .carousel-button {
-    width: 30px;
-    height: 30px;
+  
+  .hours-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 5px;
   }
-
-  .prev {
-    left: -15px;
-  }
-
-  .next {
-    right: -15px;
-  }
-
+  
   .theme-toggle {
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
   }
   
   .toggle-track {
@@ -707,96 +841,161 @@ section {
     transform: translateX(25px);
   }
   
-  .toggle-thumb svg {
-    width: 12px;
-    height: 12px;
+  .social-links {
+    gap: 15px;
   }
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 28px;
+/* Large Mobile Phones */
+@media (max-width: 580px) {
+  .hero {
+    height: 350px;
   }
-
-  .nav {
-    gap: 10px;
+  
+  .carousel {
+    padding: 15px;
   }
-
-  .nav-link {
-    padding: 6px 10px;
+  
+  .pizza-image {
+    height: 220px;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .menu-item {
+    padding: 15px;
+  }
+  
+  .carousel-button {
+    width: 30px;
+    height: 30px;
     font-size: 14px;
   }
-
-  .section-title {
-    font-size: 28px;
+  
+  .prev {
+    left: -15px;
+  }
+  
+  .next {
+    right: -15px;
+  }
+  
+  .contact-item {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .icon {
+    margin-top: 3px;
   }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* Small Mobile Phones */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px;
   }
-  to {
-    opacity: 1;
+  
+  .nav {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+  
+  .nav-link {
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+  }
+  
+  .hero {
+    height: 300px;
+    padding: 0 10px;
+  }
+  
+  section {
+    padding: 40px 10px;
+  }
+  
+  .carousel {
+    padding: 10px;
+    margin: 0 5px;
+  }
+  
+  .pizza-image {
+    height: 180px;
+  }
+  
+  .carousel-button {
+    display: none; /* Hide carousel buttons on very small screens */
+  }
+  
+  .menu-item {
+    padding: 12px;
+  }
+  
+  .hours-container {
+    padding: 0 10px;
+  }
+  
+  .contact-container {
+    gap: 30px;
+  }
+  
+  .contact-info-box,
+  .contact-form-box {
+    padding: 15px;
+  }
+  
+  .theme-toggle {
+    top: 8px;
+    right: 8px;
+  }
+  
+  .toggle-track {
+    width: 45px;
+    height: 23px;
+  }
+  
+  .toggle-thumb {
+    width: 19px;
+    height: 19px;
+  }
+  
+  .toggle-thumb.dark {
+    transform: translateX(22px);
+  }
+  
+  .footer {
+    padding: 25px 10px;
+  }
+  
+  .social-links {
+    gap: 12px;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
   }
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
+/* Extra Small Screens */
+@media (max-width: 360px) {
+  .hero {
+    height: 280px;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+  
+  .pizza-image {
+    height: 160px;
   }
-}
-
-.hero-title,
-.hero-subtitle {
-  animation: slideUp 0.8s ease forwards;
-}
-
-.menu-item,
-.hours-item,
-.contact-item {
-  animation: fadeIn 0.6s ease forwards;
-}
-
-/* Add a subtle hover effect to interactive elements */
-.menu-item,
-.form-input,
-.form-textarea,
-.social-link {
-  transition: all 0.3s ease;
-}
-
-.form-input:focus,
-.form-textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px var(--form-focus-shadow);
-}
-
-/* Scrollbar styling for modern browsers */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-  border-radius: 5px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: var(--accent-color);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
-}
+  
+  .menu-grid {
+    gap: 10px;
+  }
+  
+  .carousel {
+    margin: 0;

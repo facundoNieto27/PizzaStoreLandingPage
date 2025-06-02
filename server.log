@@ -1,1 +1,2 @@
-nodemon: command not found
+Server is running on http://localhost:5000
+Connected to MongoDB
